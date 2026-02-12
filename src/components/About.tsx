@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { toast } from 'sonner';
 
 const About = () => {
   const ref = useRef(null);
@@ -69,9 +70,14 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 bg-sage-400 text-forest-900 px-8 py-3 rounded-full hover:bg-sage-500 transition-colors font-semibold uppercase text-sm"
+              type="button"
+              aria-disabled="true"
+              onClick={() =>
+                toast.info('Detailed story page is under construction.', {
+                  description: 'For now, you can explore the rest of the site.',
+                })
+              }
+              className="mt-8 bg-sage-400/60 text-forest-900/80 px-8 py-3 rounded-full font-semibold uppercase text-sm cursor-not-allowed"
             >
               Read More
             </motion.button>

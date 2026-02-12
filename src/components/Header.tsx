@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,6 +48,17 @@ const Header = () => {
     { label: "Contact", href: "/#contact", sectionId: "contact" },
     { label: "Blog", href: "/blog", sectionId: null },
   ] as const;
+
+  const handleOrderNowClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    toast.info("Prefer talking to a human?", {
+      description: "Call us to plan your order.",
+    });
+  };
 
   return (
     <motion.header
@@ -105,6 +117,8 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
+          type="button"
+          onClick={handleOrderNowClick}
           className="hidden md:block bg-sage-400 text-forest-900 px-6 py-2 rounded-full text-sm font-semibold hover:bg-sage-500 transition-colors shadow-sm"
         >
           Order Now
@@ -178,7 +192,11 @@ const Header = () => {
                 </Link>
               );
             })}
-            <button className="bg-sage-400 text-forest-900 px-6 py-2 rounded-full hover:bg-sage-500 transition-colors font-semibold">
+            <button
+              type="button"
+              onClick={handleOrderNowClick}
+              className="bg-sage-400 text-forest-900 px-6 py-2 rounded-full hover:bg-sage-500 transition-colors font-semibold"
+            >
               Order Now
             </button>
           </div>

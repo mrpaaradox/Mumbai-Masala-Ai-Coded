@@ -122,20 +122,7 @@ const FavoriteMenu = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-forest-900 px-8 py-3 rounded-full hover:bg-sage-400 hover:text-forest-900 transition-colors text-lg font-semibold shadow-md"
-          >
-            View All
-          </motion.button>
-        </motion.div>
+        {/* View All / full menu modal can be added here later */}
       </div>
     </section>
   );

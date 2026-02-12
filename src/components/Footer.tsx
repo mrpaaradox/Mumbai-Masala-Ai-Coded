@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { FacebookIcon, InstagramIcon, TwitterIcon, YouTubeIcon } from './icons';
 
 const Footer = () => {
@@ -30,23 +31,9 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-white text-3xl font-bold mb-4">Mumbai Masala</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Modern Indian kitchen celebrating the flavours of Mumbai with warm hospitality and relaxed dining.
               </p>
-              <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    whileHover={{ scale: 1.2, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-forest-800 rounded-full flex items-center justify-center hover:bg-sage-400 hover:text-forest-900 transition-colors"
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
             </motion.div>
           </div>
 
@@ -61,16 +48,38 @@ const Footer = () => {
             >
               <h4 className="text-white font-semibold mb-4 text-lg">{title}</h4>
               <ul className="space-y-2">
-                {links.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link === 'Blog' ? '/blog' : '#'}
-                      className="hover:text-sage-400 transition-colors hover:translate-x-1 inline-block"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link, index) => {
+                  const isActive = link === 'Blog';
+
+                  if (isActive) {
+                    return (
+                      <li key={index}>
+                        <a
+                          href="/blog"
+                          className="hover:text-sage-400 transition-colors hover:translate-x-1 inline-block"
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li key={index}>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          toast.info(`${link} page is under construction.`, {
+                            description: 'Please check back soon.',
+                          })
+                        }
+                        className="inline-block text-gray-500/80 hover:text-sage-400 transition-colors cursor-not-allowed"
+                      >
+                        {link}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </motion.div>
           ))}

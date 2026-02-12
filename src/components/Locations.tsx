@@ -112,13 +112,14 @@ const Locations = () => {
                       <span className="text-sm">{location.distance}</span>
                     </div>
                   </div>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="mt-4 w-full bg-sage-400 text-forest-900 py-3 rounded-lg hover:bg-sage-500 transition-colors font-semibold"
-                  >
-                    View Location
-                  </motion.button>
+                    {/* <motion.button
+                      initial={false}
+                      type="button"
+                      aria-disabled="true"
+                      className="mt-4 w-full bg-sage-400/60 text-forest-900/70 py-3 rounded-lg font-semibold cursor-not-allowed"
+                    >
+                      View Location (coming soon)
+                    </motion.button> */}
                 </div>
               </motion.div>
             ))}
