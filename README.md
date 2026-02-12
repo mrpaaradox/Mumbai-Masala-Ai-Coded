@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mumbai Masala Restaurant Landing Page
+
+A modern, responsive restaurant landing page for Mumbai Masala built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- ⚡ Built with Next.js 15 (App Router)
+- 🎨 Styled with Tailwind CSS
+- ✨ Smooth animations with Framer Motion
+- 📱 Fully responsive design
+- 🎯 TypeScript for type safety
+- 🚀 Optimized for performance
+
+## Sections
+
+1. **Hero Section** - Eye-catching introduction with animated food imagery
+2. **Favorite Menu** - Showcase of popular dishes with interactive cards
+3. **Book a Table** - Functional reservation form with beautiful UI
+4. **About Section** - Company story and statistics
+5. **Locations** - Restaurant locations with contact information
+6. **Footer** - Comprehensive site links and social media
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Font:** Inter (Google Fonts)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── layout.tsx       # Root layout with metadata
+│   ├── page.tsx         # Main page
+│   └── globals.css      # Global styles
+└── components/
+    ├── Header.tsx       # Navigation header
+    ├── Hero.tsx         # Hero section
+    ├── FavoriteMenu.tsx # Menu showcase
+    ├── BookTable.tsx    # Booking form
+    ├── About.tsx        # About section
+    ├── Locations.tsx    # Location information
+    └── Footer.tsx       # Footer with links
+```
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Colors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The main color palette can be customized in the Tailwind classes:
+
+- Primary Green: `#2d4438`
+- Accent Green: `#7fa68d`
+- Brown/Tan: `#c9956b`
+
+### Content
+
+Edit the component files to update:
+- Menu items in `FavoriteMenu.tsx`
+- Location information in `Locations.tsx`
+- About content in `About.tsx`
+- Footer links in `Footer.tsx`
+
+## Performance
+
+- Automatic image optimization
+- Code splitting by route
+- Lazy loading of components
+- Smooth scroll behavior
+- Optimized animations with Framer Motion
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+MIT
+
+## Author
+
+Built with ❤️ by the W'Food Team
+# Mumbai-Masala-Ai-Coded
